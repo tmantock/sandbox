@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .top {
+            height: 100vh;
+            width: 100vw;
+            background: red;
+            position: relative;
+            margin: 0;
+        }
+
+        .bottom {
+            height: 100vh;
+            width: 100vw;
+            background: black;
+            position: relative;
+            margin: 0;
+        }
+    </style>
+    <script>
+        function scroll () {
+            var x = $('.top').position().top;
+            var xHeight = $('.top').height();
+
+            $('.bottom').animate({top:(-1*xHeight) + 'px'},900);
+        }
+    </script>
+</head>
+<body>
+    <div class = "top" onclick = 'scroll()'></div>
+    <div class = "bottom"></div>
+</body>
+</html>
